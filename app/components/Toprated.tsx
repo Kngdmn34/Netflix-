@@ -1,19 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MovieCard from '../UIcomponents/MovieCard'
 import Topratedcard from '../UIcomponents/Topratedcard'
+import getAllMovies from '../actions/getAllMovies'
 
 const Toprated = async () => {
-    const data = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}`)
-    const response = await data.json()
-    console.log(response)
+
+
+
+    const data = await getAllMovies(1)
+
+
 
     return (
-        <div className='flex flex-col justify-center items-center lg:mx-11 lg:grid lg:gap-16 lg:grid-cols-fluid'>
-            {response.results.map((movie: any) => {
-                return (
-                    <Topratedcard id={movie.id} backdrop_path={movie.backdrop_path} poster_path={movie.poster_path} title={movie.title} key={movie.id} original_language={movie.original_language} />
-                )
-            })}
+        <div className='w-full'>
+
+            return (
+            <div className='w-[96%] mx-auto gap-3 md:grid-cols-4  grid grid-cols-3 lg:grid-cols-5 '>
+                {data.map((item) => (
+                    <Topratedcard key={item.id} item={item} />
+                ))}
+            </div>
+            )
         </div>
     )
 }

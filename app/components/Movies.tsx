@@ -1,22 +1,22 @@
 import React from 'react'
 import MovieCard from '../UIcomponents/MovieCard'
+import { motion } from 'framer-motion'
+import axios, { AxiosResponse } from 'axios'
+import getMovies from '../actions/getMovies'
 
 
 
 const Movies = async () => {
 
-    const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
-    const response = await data.json()
-    console.log(response)
-
+    const data = await getMovies()
 
     return (
-        <div className='grid gap-3  grid-cols-fluid  text-white'>
-            {response.results.map((movie: any) => {
-                return (
-                    <MovieCard id={movie.id} backdrop_path={movie.backdrop_path} poster_path={movie.poster_path} title={movie.title} key={movie.id} original_language={movie.original_language} />
-                )
-            })}
+        <div className='relative w-full'>
+
+            return (
+            <MovieCard data={data} />
+            )
+
 
         </div>
     )

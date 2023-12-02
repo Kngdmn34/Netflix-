@@ -2,6 +2,7 @@ import Billboard from "./components/Billboard";
 import Movies from "./components/Movies";
 import Toprated from "./components/Toprated";
 import Footer from "./components/Footer";
+import LoadMore from "./components/LoadMore";
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <br />
       <Toprated />
       <br />
+
       <Footer />
     </main>
   )

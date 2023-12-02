@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
     return (
 
-        <footer className="w-full bg-gray-900 border-t-4  border-red-800  ">
+        <footer className="w-full mt-11 bg-neutral-900 border-t-4  border-red-800  ">
             <div className="w-full mx-auto max-w-screen-xl lg:flex lg:justify-between lg:items-center p-4 ">
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="/" className="hover:underline">Netflix™ </a>.  KNG DMN34.
                 </span>

@@ -2,10 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import Logo from '../../public/images/netflix.png';
 import Link from 'next/link'
+import LogoUser from '../../public/images/favicond.png'
+import SearchBar from '../UIcomponents/SearchBar';
 
 const Navbar = () => {
     return (
-        <div className='fixed shadow-lg top-0 z-20 bg-gray-900 lg:bg-transparent  items-center border-b-4 lg:border-b-2 border-red-800 text-neutral-300 py-2 w-full align-bottom lg:backdrop-blur-2xl '>
+        <nav className='fixed  shadow-lg shadow-red-700 top-0 z-20  bg-transparent  items-center  border-red-800 text-neutral-300 py-2 w-full align-bottom backdrop-blur-md '>
             <div className='flex justify-center items-center lg:hidden'>
                 <Link href={'/'}>
                     <Image src={Logo} height={100} width={100} alt='logo' priority />
@@ -19,22 +21,20 @@ const Navbar = () => {
                 </div>
 
                 <div className='hidden lg:flex px-11 pt-1 '>
-                    <ul className='flex flex-row space-x-5 '>
-                        <Link href={'/'} className=' hover:text-neutral-200'>
-                            Home
-                        </Link>
-                        <li className='cursor-pointer hover:text-neutral-200'>
-                            Descover
-                        </li>
-                        <Link href={'/about'} className=' hover:text-neutral-200'>
-                            About
-                        </Link>
-                    </ul>
+                    <span className='flex flex-row space-x-5 '>
+
+                        <SearchBar />
+
+
+
+                        <Image src={LogoUser} height={20} width={20} alt='' />
+
+                    </span>
 
                 </div>
 
             </div>
-        </div>
+        </nav>
     )
 }
 

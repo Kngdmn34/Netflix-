@@ -1,34 +1,35 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 
-interface MovieProps {
-    id: number
-    title: string
-    original_language: string
-    poster_path: string,
-    backdrop_path: string
 
 
-}
+const Topratedcard = ({ item }: { item: Movie }) => {
 
-const Topratedcard: React.FC<MovieProps> = ({ id, title, original_language, poster_path, backdrop_path }) => {
-
-
+    const router = useRouter()
 
     const imagePath = `https://image.tmdb.org/t/p/original`
     return (
-        <div className='rounded-md cursor-pointer '>
-            <Link href={`/${id}`}>
-                <div className='lg:hover:scale-110  transition-transform'>
-                    <Image className='relative filter brightness-75  rounded-md' src={imagePath + poster_path} alt={title} height={250} width={250} />
-                    <br />
-                    <div className='static  '>
-                        <h1 className=' drop-shadow-xl   font-semibold top-2.5 z-10 text-neutral-200'>{title}</h1>
-                    </div>
+        <div className=''>
+
+
+            <div onClick={() => router.push(`/${item.id}`)} key={item.id} className='lg:hover:scale-105  hover:z-10  transition-transform'>
+                <span className='relative'>
+                    <Image className='relative filter brightness-75  rounded-md' src={imagePath + item.poster_path} alt='' height={150} width={150} />
+                    <h1 className='absolute mx-2 backdrop-blur-3xl drop-shadow-md text-neutral-100 font-semibold bottom-6 left-0 text-tiny  items-center flex justify-center border-2  border-yellow-400 h-9 w-9 rounded-full'>
+                        {Math.round(item.vote_average).toFixed(1)}%</h1>
+                </span>
+                <br />
+                <div className=' items-center w-full flex flex-row space-x-3  '>
+                    <h1 className=' drop-shadow-xl text-sm   font-semibold top-0 z-10 text-neutral-200'>{item.title}</h1>
 
                 </div>
-            </Link>
+
+            </div>
+
+
 
         </div>
     )

@@ -29,8 +29,8 @@ const MovieDetail = async ({ params: { id } }: Params) => {
     return (
         <>
             <Suspense fallback={<h2>Loading</h2>}>
-                <div className='hidden lg:flex relative cursor-default mt-6  min-h-screen overflow-hidden '>
-                    <Image className='filter blur-sm brightness-75' src={imagePath + res.backdrop_path} loading='lazy' quality={100} fill={true} alt='background' />
+                <div className='hidden lg:flex relative cursor-default   min-h-screen overflow-hidden '>
+                    <Image className='filter relative top-0 blur-sm brightness-75' src={imagePath + res.backdrop_path} loading='lazy' quality={100} fill={true} alt='background' />
                     <div className='absolute mx-11 flex  left-0 z-10 min-h-screen   justify-center items-center'>
                         <div className='text-white flex flex-row space-x-48  '>
                             <div className='relative cursor-pointer flex justify-center items-center'>
