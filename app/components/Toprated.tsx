@@ -15,7 +15,7 @@ const Toprated = async () => {
         <div className='w-full'>
 
             return (
-            <div className='w-[96%] mx-auto gap-3 md:grid-cols-4  grid grid-cols-3 lg:grid-cols-5 '>
+            <div className='w-[96%] mx-auto gap-2 md:grid-cols-4  grid grid-cols-3 lg:grid-cols-5 '>
                 {data.map((item) => (
                     <Topratedcard key={item.id} item={item} />
                 ))}

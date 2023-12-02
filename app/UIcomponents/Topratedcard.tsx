@@ -17,7 +17,7 @@ const Topratedcard = ({ item }: { item: Movie }) => {
 
             <div onClick={() => router.push(`/${item.id}`)} key={item.id} className='lg:hover:scale-105  hover:z-10  transition-transform'>
                 <span className='relative'>
-                    <Image className='relative filter brightness-75  rounded-md' src={imagePath + item.poster_path} alt='' height={150} width={150} />
+                    <Image className='relative filter brightness-75  rounded-md' src={imagePath + item.poster_path} alt='' height={200} width={200} />
                     <h1 className='absolute mx-2 backdrop-blur-3xl drop-shadow-md text-neutral-100 font-semibold bottom-6 left-0 text-tiny  items-center flex justify-center border-2  border-yellow-400 h-9 w-9 rounded-full'>
                         {Math.round(item.vote_average).toFixed(1)}%</h1>
                 </span>
