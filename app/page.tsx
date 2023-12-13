@@ -5,7 +5,10 @@ import Footer from "./components/Footer";
 import LoadMore from "./components/LoadMore";
 
 
-export default function Home() {
+export default async function Home() {
+
+
+
   return (
     <main className="cursor-default">
       <Billboard />
@@ -16,9 +19,7 @@ export default function Home() {
       <br />
       <h1 className="p-6 text-white text-xl lg:text-3xl mx-16 font-semibold tracking-wide">Top Rated</h1>
       <br />
-      <Toprated />
-      <br />
-
+      <LoadMore />
       <Footer />
     </main>
   )

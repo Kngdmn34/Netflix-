@@ -20,7 +20,7 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                <div className='hidden lg:flex px-11 pt-1 '>
+                <div className='hidden  md:absolute top-1.5 right-3 md:flex md:justify-end md:items-center px-11 pt-1 '>
                     <span className='flex flex-row space-x-5 '>
 
                         <SearchBar />

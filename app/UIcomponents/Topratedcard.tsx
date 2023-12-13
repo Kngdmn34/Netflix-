@@ -6,13 +6,15 @@ import { useRouter } from 'next/navigation'
 
 
 
+
 const Topratedcard = ({ item }: { item: Movie }) => {
 
     const router = useRouter()
 
     const imagePath = `https://image.tmdb.org/t/p/original`
+
     return (
-        <div className=''>
+        <div className='w-full'>
 
 
             <div onClick={() => router.push(`/${item.id}`)} key={item.id} className='lg:hover:scale-105  hover:z-10  transition-transform'>
