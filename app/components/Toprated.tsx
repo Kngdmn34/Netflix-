@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react'
 import MovieCard from '../UIcomponents/MovieCard'
 import Topratedcard from '../UIcomponents/Topratedcard'
-import getAllMovies from '../actions/getAllMovies'
+import getAllMovies from '../actions/getAllMovies';
+
+type Toprated = {
+    item: Movie
+}
 
 const Toprated = async () => {
 
@@ -16,7 +20,7 @@ const Toprated = async () => {
 
             return (
             <div className='w-[96%] mx-auto gap-2 md:grid-cols-4  grid grid-cols-3 lg:grid-cols-5 '>
-                {data.map((item) => (
+                {data.map((item: Movie) => (
                     <Topratedcard key={item.id} item={item} />
                 ))}
             </div>
